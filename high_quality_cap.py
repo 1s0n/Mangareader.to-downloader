@@ -21,9 +21,15 @@ import selenium
 
 chrome_options = webdriver.ChromeOptions()
 chrome_options.add_argument("--headless")
+mangareader_linkfile = "links.txt"
+mangareader_link = input(f"Files that contains the link to the first page of the manga: ")
+try:
+	with open(mangareader_linkfile, "r") as f:
+		mangareader_links = f.readlines()
+except:
+	print("File not found!")
+	exit()
 
-
-mangareader_link = input("Link to manga (The link to the first page of the manga): ")
 #autocontinue = True if input("Autocontinue (T/F): ").lower() != "f" else False
 autocontinue = False
 autoc = input("Autocontinue (T/F): ").lower()
@@ -39,7 +45,7 @@ driver = webdriver.Chrome(chrome_options=chrome_options, executable_path=driverp
 
 print(driver.get_window_size())
 
-
+print(mangareader_link)
 driver.get(mangareader_link)
 
 
@@ -71,8 +77,12 @@ while True:
 	except Exception as e:
 		sleep(0.5)
 
+mangatitle = mangatitle.replace(":", "")
+mangatitle = mangatitle.replace("/", "")
+
 if not os.path.isdir("downloads"):
 	os.mkdir("downloads")
+
 
 if not os.path.isdir(f"downloads/{mangatitle}"):
 	os.mkdir(f"downloads/{mangatitle}")

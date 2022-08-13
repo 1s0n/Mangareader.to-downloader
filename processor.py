@@ -1,3 +1,4 @@
+import os
 from PIL import Image
 
 images = []
@@ -5,12 +6,15 @@ images = []
 import cv2
 import numpy as np
 
+imagefiles = os.listdir("temppng")
+
+imagelen = len(imagefiles)
 
 print("Cropping images...")
 
 import cropper
 
-for i in range(1, 191):
+for i in range(1, imagelen):
     try:
         
         print("Processing image " + str(i))
@@ -29,7 +33,7 @@ for i in range(1, 191):
 
 print("Done! Beggining to append to pdf...")
 
-for i in range(1, 191):
+for i in range(1, imagelen):
     print("Opening image " + str(i))
     images.append(Image.open(f"temppng/{i}.png"))
 
