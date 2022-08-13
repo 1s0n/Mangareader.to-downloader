@@ -136,8 +136,8 @@ while True:
 	xref = img[0]
 	image = doc.extract_image(xref)
 	pix = fitz.Pixmap(doc, xref)
-	pix.save(f"temppng\{pagenum}.png")
-	imglist.append(f"temppng/{pagenum}.png")
+	pix.save(f"downloads/{mangatitle}/{pagenum}.png")
+	imglist.append(f"downloads/{mangatitle}/{pagenum}.png")
 	try:
 		nextbutton.click()
 	except selenium.common.exceptions.StaleElementReferenceException:
