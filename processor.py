@@ -1,7 +1,6 @@
 import os
 from PIL import Image
 import time
-images = []
 
 import cv2
 import numpy as np
@@ -9,6 +8,8 @@ import numpy as np
 mangas = os.listdir("downloads")
 
 for manga in mangas:
+
+    images = []
 
     print("processing manga: " + manga)
 
