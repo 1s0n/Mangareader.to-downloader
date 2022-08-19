@@ -4,3 +4,4 @@ temp/
 links.txt
 temppng/
 downloads/*
+__pycache__
