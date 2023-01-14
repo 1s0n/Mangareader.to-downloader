@@ -37,15 +37,7 @@ mangatitle = mangatitle.replace("Read ", "")
 mangatitle = mangatitle.replace(" in English Online Free", "")
 
 
-while True:
-	try:
-		horizontal_button = driver.find_element(by=By.CSS_SELECTOR, value="#first-read > div.read-tips > div > div.rtl-rows > a:nth-child(2)")
-		horizontal_button.click()
-		break
-	except:
-		sleep(0.5)
-
-# input()
+input()
 
 quality_selector = "#wrapper > div.mr-tools.mrt-top > div > div > div.float-left > div:nth-child(3) > button"
 high_quality_selector = "#wrapper > div.mr-tools.mrt-top > div > div > div.float-left > div.rt-item.show > div > a:nth-child(1)"
